@@ -1,0 +1,105 @@
+/* ============ Tokens ============ */
+:root{
+  --maxw: 1200px;
+  --side: 200px;
+
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+
+  --c-bg:#fff; --c-body:#fff8f7; --c-line:#efefef; --c-text:#1f1f1f; --c-muted:#6b6b6b;
+  --c-primary:#7a2321; --c-accent:#c62828;
+
+  --radius:12px; --shadow:0 8px 24px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box} body{margin:0;background:var(--c-body);color:var(--c-text);font-family:Arial, sans-serif}
+a{color:inherit;text-decoration:none} ul{list-style:none;margin:0;padding:0}
+
+/* ============ Page Grid (Left 200 / Main auto / Right 200) ============ */
+.km-page{
+  max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns: var(--side) 1fr var(--side); gap:16px; padding:0 16px;
+}
+
+/* ============ A: Left Side (200) ============ */
+.km-side{
+  grid-column:1; position:sticky; top:0; align-self:start;
+  min-height:100vh; background:#fff; border:1px solid var(--c-line); border-radius:12px; box-shadow:var(--shadow);
+  display:flex; flex-direction:column;
+}
+.km-logo{padding:16px; border-bottom:1px solid var(--c-line); display:flex; align-items:center; justify-content:center}
+.km-logo img{height:44px}
+
+.km-nav{padding:12px}
+.km-nav .main > li{margin-bottom:10px}
+.km-nav .main > li > a{
+  display:block; font-weight:700; padding:10px 12px; border-radius:8px; transition:.2s;
+}
+.km-nav .main > li > a:hover{ background:rgba(198,40,40,.08); color:var(--c-accent) }
+.km-nav .sub{margin-top:6px; border-left:2px solid #f3d1cf; padding-left:10px}
+.km-nav .sub a{display:block; padding:8px 10px; border-radius:6px; color:var(--c-muted)}
+.km-nav .sub a:hover{background:#fff1f0; color:var(--c-text)}
+
+.km-side-bottom{margin-top:auto; padding:12px; border-top:1px solid var(--c-line); text-align:center; color:#bbb}
+
+/* ============ center main ============ */
+.km-main{ grid-column:2 }
+
+/* B: Slider 300px */
+.km-slider{ position:relative; height:300px; border-radius:12px; overflow:hidden; background:#ffe5e3; box-shadow:var(--shadow); margin-top:16px }
+.km-track{ display:flex; height:100%; transition:transform .6s ease }
+.km-slide{ min-width:100%; height:100%; position:relative; }
+.km-slide.g1{ background:linear-gradient(135deg,#801515 0%,#c62828 100%) }
+.km-slide.g2{ background:linear-gradient(135deg,#7a2321 0%,#ff6f61 100%) }
+.km-slide.g3{ background:linear-gradient(135deg,#a72b2b 0%,#ff8a65 100%) }
+
+/* 슬라이드 텍스트 */
+.km-hero{ position:absolute; left:24px; bottom:24px; background:rgba(0,0,0,.45); color:#fff; padding:12px 16px; border-radius:10px }
+.km-hero h2{ font-size:22px; font-weight:800; color:#ffd1cc; margin-bottom:6px }
+.km-hero p{ font-size:14px }
+
+.km-dots{ position:absolute; left:50%; bottom:14px; transform:translateX(-50%); display:flex; gap:10px }
+.km-dot{ width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.55); border:1px solid rgba(0,0,0,.08) }
+.km-dot.active{ background:#fff }
+
+/* C: Contents 200px (공지/갤러리 | 배너 | 바로가기) */
+.km-contents{ height:200px; display:grid; grid-template-columns: 1.2fr 1fr 1fr; gap:16px; margin:16px 0 }
+.km-card{ background:#fff; border:1px solid var(--c-line); border-radius:12px; padding:16px; box-shadow:var(--shadow) }
+.km-card h2{ font-size:16px; font-weight:800; margin-bottom:10px; color:var(--c-primary) }
+
+.km-tabs{ display:flex; gap:8px; margin-bottom:12px }
+.km-tab{ padding:8px 12px; border:1px solid var(--c-line); border-radius:8px; background:#fff; font-size:13px; cursor:pointer }
+.km-tab.active{ background:var(--c-accent); color:#fff; border-color:var(--c-accent) }
+
+.km-notices{ height:126px; overflow:auto; padding-right:4px }
+.km-notices li{ margin-bottom:6px; font-size:14px }
+.km-notices a{ display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+
+.km-gallery{ height:126px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px }
+.km-gcell{ width:100%; height:100%; border-radius:10px; background:#fff7f6; border:1px dashed #f3b2b2 }
+
+/* C3/C4 이미지 */
+.km-banner img, .km-shortcut img{ width:100%; height:126px; object-fit:cover; border-radius:10px; background:#fff1f0 }
+
+/* D: Footer 100px */
+footer{ height:100px; background:#2a0f0f; color:#fff; display:flex; align-items:center; border-radius:12px; box-shadow:var(--shadow) }
+.km-footer{ width:100%; display:grid; grid-template-columns:160px 1fr 200px; gap:16px; align-items:center; padding:0 16px }
+.km-copy{ text-align:center; font-size:13px; color:#ffdede }
+.km-sns{ display:flex; justify-content:flex-end; gap:12px }
+.km-sns a{ opacity:.8; transition:opacity .2s } .km-sns a:hover{ opacity:1 }
+
+/* 우측 200 */
+.km-right{ grid-column:3 }
+
+/* 메뉴가 슬라이더에 가려지지 않도록 */
+.km-side, .km-nav { position:relative; z-index:60 }
+.km-slider{ z-index:1 }
+
+/* Responsive */
+@media (max-width: 1024px){
+  .km-page{ grid-template-columns: 1fr }
+  .km-side, .km-right{ display:none }
+  .km-contents{ grid-template-columns:repeat(2,1fr); height:auto }
+  .km-slider{ height:260px }
+}
+@media (max-width:640px){
+  .km-contents{ grid-template-columns:1fr }
+  .km-slider{ height:220px }
+}
