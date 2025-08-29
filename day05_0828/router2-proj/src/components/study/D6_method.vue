@@ -30,7 +30,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import img_tiger_square from '../assets/img_tiger_square.jpeg'
+import img_tiger_square from '@/assets/img_tiger_square.jpeg'
 
 // 클릭 이벤트
 const text = ref ('text')

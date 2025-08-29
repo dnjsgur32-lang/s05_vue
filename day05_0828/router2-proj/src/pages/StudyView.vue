@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from 'vue';
-import D4_for from '../components/D4_for.vue';
-import D5_event from '../components/D5_event.vue';
-import D6_method from '../components/D6_method.vue';
-import D7_model from '../components/D7_model.vue';
-import D8_computed from '../components/D8_computed.vue';
-import D9_Watchers from '../components/D9_Watchers.vue';
+import D4_for from '../components/study/D4_for.vue';
+import D5_event from '../components/study/D5_event.vue';
+import D6_method from '../components/study/D6_method.vue';
+import D7_model from '../components/study/D7_model.vue';
+import D8_computed from '../components/study/D8_computed.vue';
+import D9_Watchers from '../components/study/D9_Watchers.vue';
 
 
 
